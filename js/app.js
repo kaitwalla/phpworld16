@@ -57,7 +57,7 @@ jQuery(document).ready(function() {
       "url": "http://phpworld16.thedanherman.com/wp-json/phpworld/vote/"+action+"/"+id + '?'+ new Date().getTime(),
       "method": "GET",
       "headers": {
-        "authorization": "Basic ZXZlcnlvbmU6UnlTeSB1c3J0IDJ4TEggUGg1cg==",
+        "authorization": "Basic "+YOUR_APPLICATION_PASSWORD,
         "cache-control": "no-cache",
       },
     };
@@ -110,7 +110,7 @@ jQuery(document).ready(function() {
         "url": "http://phpworld16.thedanherman.com/wp-json/wp/v2/posts?status=publish&title="+encodeURIComponent(jQuery('textarea').val()),
         "method": "POST",
         "headers": {
-          "authorization": "Basic ZXZlcnlvbmU6UnlTeSB1c3J0IDJ4TEggUGg1cg==",
+          "authorization": "Basic "+YOUR_APPLICATION_PASSWORD,
           "cache-control": "no-cache",
           "postman-token": "94a75cdb-0ca9-93c8-758b-97777928c5f9"
         }
