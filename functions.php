@@ -68,10 +68,9 @@ function send_pusher_notification_new_post( $post_id ) {
   $post = get_post($post_id);
   
   //Trashing a post also counts as a save
-  if ($post->post_status == 'publish'):
-    //Set vote count to 1
-    update_post_meta(   $post_id, 'votes', 1 );
-    $action = 'new_post';
+  if ($post->post_status == 'publish' && empty(get_post_meta($post_id,'votes'))):
+    update_post_meta($post_id,'votes',1);
+		$action = 'new_post';
     $data = $post_id;
     $pusher->trigger($pusher_channel, $action, $data);
   endif;

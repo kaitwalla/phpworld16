@@ -11,7 +11,7 @@
 </div>
 <div id="questions_list"<?php if (!get_option('voting_enabled')) : print ' class="voting_disabled"'; endif; ?>>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <?php $vote_total = (get_post_meta( $post->ID, 'votes', true )) ? get_post_meta( $post->ID, 'votes', true ) : 1; ?>
+  <?php $vote_total = get_post_meta( $post->ID, 'votes', true ); ?>
   <div class="row post" data-post-id="<?php print $post->ID; ?>" data-votes="<?php print $vote_total; ?>">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <div class="row">
